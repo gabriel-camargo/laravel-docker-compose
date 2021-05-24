@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: root
+        uid: 9898
+      context: ./
+      dockerfile: Dockerfile
+    image: laravel-compose
+    container_name: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./apps/laravel:/var/www
+    networks:
+      - network_laravel
+
+  nginx:
+    image: nginx:alpine
+    container_name: laravel-nginx
+    restart: unless-stopped
+    ports:
+      - 9000:80
+    volumes:
+      - ./apps/laravel:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - network_laravel
+
+networks:
+  network_laravel:
+    driver: bridge
