@@ -40,8 +40,15 @@ $ ./setup.sh
 Para subir o container a partir de um repositório ja existente, digitando o seguinte comando:
 
 ```
-$ ./setup.sh --repo="link-do-repositório"
+$ ./setup.sh --repo "link-do-repositório"
 ```
 
 Caso o script tenha rodado com sucesso, você pode usar a api
 acessando **http://localhost:9000** em sua máquina.
+
+## Observações
+
+1. Caso deseje rodar mais projetos laravel no seu ambiente, você deve ficar atento e trocar o número da porta
+em que rodará seus aplicativos. Para alterar o número da porta, basta editar o arquivo **docker-compose.yml**.
+
+2. Além disso, também é importante trocar o nome dos **containers** caso deseje rodar mais de um projeto em seu ambiente local. Para isso, basta alterar os itens **container_name** dos containers **app** e **nginx** no arquivo **docker-compose.yml**.
