@@ -43,7 +43,7 @@ Para subir o container a partir de um repositório ja existente, digitando o seg
 $ ./setup.sh --repo "link-do-repositório"
 ```
 
-Caso o script tenha rodado com sucesso, você pode usar a api
+Caso o script tenha rodado com sucesso, você pode verificar seu projeto 
 acessando **http://localhost:9000** em sua máquina.
 
 ## Observações
